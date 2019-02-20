@@ -6,4 +6,4 @@ RUN apk update \
  && apk add fetchmail procmail openssl ca-certificates;
 
 VOLUME ["/etc/fetchmailrc", "/etc/procmailrc", "/mail"]
-CMD ["fetchmail", "-vvv", "--nosyslog", "--nodetach", "-f", "/etc/fetchmailrc"]
+CMD ["fetchmail", "-vvv", "--nosyslog", "--nodetach", "--pidfile", "/fetchmail.pid", "-f", "/etc/fetchmailrc"]
